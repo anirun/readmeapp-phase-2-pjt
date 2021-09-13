@@ -3,7 +3,10 @@ import {
   BrowserRouter as Router, 
   Route, 
   Switch
-} from 'react-router-dom'
+} from 'react-router-dom';
+import ReviewsList from './components/ReviewsList';
+import NewReviewForm from './components/NewReviewForm';
+import Review from './components/Review';
 
 function App() {
   return (
