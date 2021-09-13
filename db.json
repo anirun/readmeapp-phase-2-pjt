@@ -4,23 +4,15 @@
       "id": 1,
       "book": "Javascript & JQuery",
       "author": "Jon Duckett",
-      "review": "Looks long. Probably useful."
+      "review": "Looks long. Probably useful.",
+      "rating": 3
     },
     {
       "id": 2,
       "book": "Cracking the Coding Interview",
       "author": "Gayle Laakmann Mcdowell",
-      "review": "Also long and similarly useful."
+      "review": "Also long and similarly useful.",
+      "rating": 3
     }
-  ],
-  "comments": [
-    {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
-    }
-  ],
-  "profile": {
-    "name": "typicode"
-  }
+  ]
 }
