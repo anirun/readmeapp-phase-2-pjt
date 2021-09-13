@@ -7,11 +7,15 @@ import {
 import ReviewsList from './components/ReviewsList';
 import NewReviewForm from './components/NewReviewForm';
 import Review from './components/Review';
+import Navbar from './components/Navbar'
 
 function App() {
   return (
     <div className="App">
       <Router>
+
+        <Navbar />
+
         <Switch>
           
           <Route exact path="/">
