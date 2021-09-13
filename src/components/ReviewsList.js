@@ -1,9 +1,13 @@
-import React from 'react'
+import React from 'react';
+import Review from './Review';
 
-function ReviewsList(props) {
+function ReviewsList({reviews}) {
+    
+    const mappedReviews = reviews.map((review) => <Review review={review} key={review.id} />)
+    
     return (
         <div>
-            <p>Here are all the reviews in a component.</p>
+            {mappedReviews}
         </div>
     )
 }
