@@ -1,9 +1,16 @@
 {
-  "posts": [
+  "reviews": [
     {
       "id": 1,
-      "title": "json-server",
-      "author": "typicode"
+      "book": "Javascript & JQuery",
+      "author": "Jon Duckett",
+      "review": "Looks long. Probably useful."
+    },
+    {
+      "id": 2,
+      "book": "Cracking the Coding Interview",
+      "author": "Gayle Laakmann Mcdowell",
+      "review": "Also long and similarly useful."
     }
   ],
   "comments": [
