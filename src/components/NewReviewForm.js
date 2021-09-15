@@ -1,6 +1,6 @@
 import React from 'react'
 
-function NewReviewForm(props) {
+function NewReviewForm() {
     return (
         <div>
             <p>New Review Form component</p>
