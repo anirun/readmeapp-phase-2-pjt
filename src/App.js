@@ -9,6 +9,7 @@ import ReviewsList from './components/ReviewsList'
 import NewReviewForm from './components/NewReviewForm'
 import Review from './components/Review'
 import Navbar from './components/Navbar'
+import SearchBar from './components/SearchBar'
 
 function App() {
 
@@ -20,11 +21,29 @@ function App() {
     .then(data => setReviews(data))
   }, [])
 
+  function addReview(newReview) {
+    fetch(`http://localhost:3000/reviews`, {
+      method: 'POST',
+      headers: {
+        'Accepts': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(newReview)
+    })
+    .then(res => res.json())
+    .then(newReview => {
+      const newArray = [...reviews, newReview]
+      setReviews(newArray)
+    })
+  }
+
   return (
     <div className="App">
       <Router>
 
         <Navbar />
+
+        <SearchBar />
 
         <Switch>
           
@@ -33,7 +52,7 @@ function App() {
           </Route>
           
           <Route exact path="/reviews/new">
-            <NewReviewForm />
+            <NewReviewForm reviews={reviews} addReview={addReview}/>
           </Route>
           
           <Route exact path="/reviews/:id">
