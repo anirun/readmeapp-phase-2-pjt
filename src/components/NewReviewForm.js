@@ -3,34 +3,22 @@ import React, { useState } from 'react'
 
 function NewReviewForm({addReview}) {
     
-    const [book, setBook] = useState('')
-    const [author, setAuthor] = useState('')
-    const [text, setText] = useState('')
-    const [rating, setRating] = useState('')
-
-    function handleBook(e) {
-        setBook(e.target.value)
-    }
-
-    function handleAuthor(e) {
-        setAuthor(e.target.value)
-    }
-
-    function handleText(e) {
-        setText(e.target.value)
-    }
-
-    function handleRating(e) {
-        setRating(e.target.value)
-    }
+    const [reviewForm, setReviewForm] = useState({
+      book: '',
+      author: '',
+      text: '',
+      rating: 0
+    })
 
     function handleSubmit(e) {
         e.preventDefault()
-        addReview({book: book, author: author, text: text, rating: rating})
-        setBook('')
-        setAuthor('')
-        setText('')
-        setRating('')
+        addReview(reviewForm)
+        setReviewForm({
+          book: '',
+          author: '',
+          text: '',
+          rating: 3
+        })
     }
 
 
@@ -40,11 +28,42 @@ function NewReviewForm({addReview}) {
         <input
           type="text"
           placeholder="Book Title?"
-          onChange={handleBook}
-          value={book}
+          onChange={e => setReviewForm({...reviewForm, book: e.target.value})}
+          value={reviewForm.book}
         />
   
         <br/>
+
+        <input
+          type="text"
+          placeholder="Author?"
+          onChange={e => setReviewForm({...reviewForm, author: e.target.value})}
+          value={reviewForm.author}
+        />
+  
+        <br/>
+
+        <input
+          type="text"
+          placeholder="Write your review..."
+          onChange={e => setReviewForm({...reviewForm, text: e.target.value})}
+          value={reviewForm.text}
+        />
+  
+        <br/>
+
+        <input
+          type="number"
+          placeholder="Rating out of 5?"
+          onChange={e => setReviewForm({...reviewForm, rating: e.target.value})}
+          value={reviewForm.rating}
+          max="5"
+          min="0"
+          step="0.5"
+        />
+  
+        <br/>
+
   
         <input
           type="submit"

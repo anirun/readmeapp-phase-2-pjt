@@ -1,18 +1,15 @@
 import './App.css'
 import React, { useState, useEffect } from 'react'
-import {
-  BrowserRouter as Router, 
-  Route, 
-  Switch
-} from 'react-router-dom'
+import { useHistory } from 'react-router'
+import { Route, Switch } from 'react-router-dom'
 import ReviewsList from './components/ReviewsList'
 import NewReviewForm from './components/NewReviewForm'
 import Review from './components/Review'
 import Navbar from './components/Navbar'
-import SearchBar from './components/SearchBar'
+// import SearchBar from './components/SearchBar'
 
 function App() {
-
+  const history = useHistory()
   const [reviews, setReviews] = useState([])
 
   useEffect(() => {
@@ -34,33 +31,36 @@ function App() {
     .then(newReview => {
       const newArray = [...reviews, newReview]
       setReviews(newArray)
+      history.push(`/`)
     })
   }
 
   return (
     <div className="App">
-      <Router>
 
-        <Navbar />
+      <h1>ReadMe</h1>
+      <h3>Find something new to read!</h3>
 
-        <SearchBar />
+      <Navbar />
 
-        <Switch>
-          
-          <Route exact path="/">
-            <ReviewsList reviews={reviews} />
-          </Route>
-          
-          <Route exact path="/reviews/new">
-            <NewReviewForm reviews={reviews} addReview={addReview}/>
-          </Route>
-          
-          <Route exact path="/reviews/:id">
-            <Review reviews={reviews} />
-          </Route>
+      {/* <SearchBar /> */}
 
-        </Switch>
-      </Router>
+      <Switch>
+        
+        <Route exact path="/reviews">
+          <ReviewsList reviews={reviews} />
+        </Route>
+        
+        <Route exact path="/reviews/new">
+          <NewReviewForm reviews={reviews} addReview={addReview}/>
+        </Route>
+        
+        <Route exact path="/reviews/:id">
+          <Review reviews={reviews} />
+        </Route>
+
+      </Switch>
+
     </div>
   )
 }

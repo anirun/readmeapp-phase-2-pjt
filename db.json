@@ -9,10 +9,17 @@
     },
     {
       "id": 2,
-      "book": "Cracking the Coding Interview",
-      "author": "Gayle Laakmann Mcdowell",
-      "text": "Also long and - similarly - likely useful.",
+      "book": "A Book",
+      "author": "An Author",
+      "text": "sldfjksvzil asldkfklw3 clkjzxljg!!!",
       "rating": 3
+    },
+    {
+      "book": "asfdasdf",
+      "author": "aaa",
+      "text": "aaaaaa",
+      "rating": "3124",
+      "id": 3
     }
   ]
 }

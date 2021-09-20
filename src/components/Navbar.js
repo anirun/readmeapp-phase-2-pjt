@@ -5,7 +5,9 @@ function Navbar() {
     return (
         <nav>
             <p></p>
-            <Link to="/">All Reviews</Link>
+            <Link to="/">Home</Link>
+            <br></br>
+            <Link to="/reviews">All Reviews</Link>
             <br></br>
             <Link to="/reviews/new">Write a Review</Link>
             <p></p>

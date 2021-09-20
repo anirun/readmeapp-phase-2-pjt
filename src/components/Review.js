@@ -1,24 +1,12 @@
 import React from 'react'
-import {
-    Card, CardImg, CardText, CardBody,
-    CardTitle, CardSubtitle, Button
-  } from 'reactstrap';
-import book_icon from '../images/book_icon.jpeg'
+import { useParams, Redirect } from 'react-router-dom'
 
-function Review({review}) {
-    
-    return (
-            <Card border="black">
-                <CardImg src={book_icon} alt="Card image cap" />
-                <CardBody>
-                    <CardTitle tag="h5">{review.book}</CardTitle>
-                    <CardSubtitle tag="h6" className="mb-2 text-muted">{review.author}</CardSubtitle>
-                    <CardText>{review.text}</CardText>
-                    <Button>Button</Button>
-                    <p />
-                </CardBody>
-            </Card>
-    )
+function Review({reviews}) {
+return (
+  <div>
+    one day, a single review.
+  </div>
+)
 }
 
 export default Review

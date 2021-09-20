@@ -1,13 +1,13 @@
 import React from 'react';
-import Review from './Review';
+import ReviewCard from './ReviewCard';
 
-function ReviewsList({reviews}) {
+function ReviewsList( { reviews } ) {
     
-    const mappedReviews = reviews.map((review) => <Review review={review} key={review.id} />)
-    
+    const ReviewCards = reviews.map((review) => <ReviewCard key={review.id} book={review.book} author={review.author} text={review.text} rating={review.rating} />)
+
     return (
-        <div>
-            {mappedReviews}
+        <div className="centered">
+            {ReviewCards}
         </div>
     )
 }
