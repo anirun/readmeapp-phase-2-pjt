@@ -6,6 +6,7 @@ import ReviewsList from './components/ReviewsList'
 import NewReviewForm from './components/NewReviewForm'
 import Review from './components/Review'
 import Navbar from './components/Navbar'
+import 'bootstrap/dist/css/bootstrap.min.css';
 // import SearchBar from './components/SearchBar'
 
 function App() {
@@ -48,7 +49,7 @@ function App() {
       <Switch>
         
         <Route exact path="/reviews">
-          <ReviewsList reviews={reviews} />
+          <ReviewsList reviews={reviews} history={history}/>
         </Route>
         
         <Route exact path="/reviews/new">
