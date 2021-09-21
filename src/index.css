@@ -5,7 +5,6 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: lightsalmon;
 }
 
 code {
@@ -21,13 +20,6 @@ h3 {
   color: cornflowerblue
 }
 
-
-a:active {
-  font-style: bold;
-}
-
-.centered {
-  height: 100vh;
-  display: flex;
-  align-items: center;
+h5 {
+  color: darkcyan
 }
