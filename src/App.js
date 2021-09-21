@@ -33,7 +33,6 @@ function App() {
     .then(newReview => {
       const newArray = [...reviews, newReview]
       setReviews(newArray)
-      history.push(`/`)
     })
   }
 

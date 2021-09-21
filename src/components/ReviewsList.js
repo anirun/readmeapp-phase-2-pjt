@@ -14,7 +14,7 @@ function ReviewsList( { reviews } ) {
     )
 
     return (
-        <Container display="flex">
+        <Container display="flex" gap="100px">
             <Row>
                 {ReviewCards}
             </Row>

@@ -8,7 +8,7 @@ function ReviewCard({ review }) {
 
     return (
         <Col>
-            <Card border="header" style={{ width: '15rem' }}>
+            <Card border="header" style={{ width: '15rem', marginTop: '100px' }}>
                 <Card.Img variant="top" src={book_icon} alt="Books." />
                 <Card.Body>
                     <Card.Title>{review.book} by {review.author}</Card.Title>

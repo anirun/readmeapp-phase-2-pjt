@@ -9,19 +9,17 @@ function NewReviewForm({addReview}) {
       rating: 0
     })
 
-    function handleSubmit() {
-        addReview(reviewForm);
-        }
-
-    function handleClick(e) {
-      e.preventDefault()
+    function handleSubmit(e) {
+      e.preventDefault()  
+      console.log('hi')
+      addReview(reviewForm);
       setReviewForm({
         book: '',
         author: '',
         text: '',
         rating: 0
-      })
-    }
+      })}
+
 
     return (
         <form id="new-review-form" onSubmit={handleSubmit}>
@@ -69,7 +67,6 @@ function NewReviewForm({addReview}) {
         <input
           type="submit"
           value="Add Review"
-          onSubmit={handleClick}
         />
   
       </form>
