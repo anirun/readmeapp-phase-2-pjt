@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 
-
 function NewReviewForm({addReview}) {
     
     const [reviewForm, setReviewForm] = useState({
@@ -10,17 +9,16 @@ function NewReviewForm({addReview}) {
       rating: 0
     })
 
-    function handleSubmit(e) {
-        e.preventDefault()
+    function handleSubmit(event) {
+        event.preventDefault()
         addReview(reviewForm)
         setReviewForm({
           book: '',
           author: '',
           text: '',
-          rating: 3
+          rating: 0
         })
     }
-
 
     return (
         <form id="new-review-form" onSubmit={handleSubmit}>

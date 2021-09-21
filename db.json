@@ -15,18 +15,46 @@
       "rating": 3
     },
     {
-      "book": "asfdasdf",
-      "author": "aaa",
-      "text": "aaaaaa",
-      "rating": "3124",
+      "book": "",
+      "author": "",
+      "text": "",
+      "rating": 0,
       "id": 3
     },
     {
-      "book": "i read books",
-      "author": "really",
-      "text": "and i write really great reviews",
-      "rating": "4",
+      "book": "",
+      "author": "",
+      "text": "",
+      "rating": 0,
       "id": 4
+    },
+    {
+      "book": "asdf",
+      "author": "wy24y",
+      "text": "ghfncvbn",
+      "rating": 0,
+      "id": 5
+    },
+    {
+      "book": "",
+      "author": "",
+      "text": "",
+      "rating": 0,
+      "id": 6
+    },
+    {
+      "book": "sdfasdf",
+      "author": "144",
+      "text": "hdghdsfhdfhzdbxc",
+      "rating": "1",
+      "id": 7
+    },
+    {
+      "book": "asdfasdfasdf",
+      "author": "asdf asghkiyk",
+      "text": "retyjkyk.l/; fdhgcghkvhjlghjkcghk",
+      "rating": "1",
+      "id": 8
     }
   ]
 }

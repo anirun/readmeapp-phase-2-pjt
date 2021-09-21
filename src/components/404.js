@@ -3,7 +3,7 @@ import React from 'react'
 function FourOhFour() {
 
   return (
-    <p>404! Oops! Sorry, review not found.</p>
+    <p>Oops! 404 - review not found.</p>
   )
 
 }

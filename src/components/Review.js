@@ -1,33 +1,35 @@
-import React, { useEffect } from 'react'
-import { useParams, useHistory } from 'react-router-dom'
-import ReviewCard from './ReviewCard'
+import React from 'react'
+import { useParams, Redirect } from 'react-router-dom'
+import Card from 'react-bootstrap/Card'
+import { Container, Row, Col } from 'react-bootstrap'
+import book_icon from '../images/book_icon.jpeg'  
 
 function Review({ reviews }) {
 
-  let { id } = useParams()
-  
-  const history = useHistory()
-
-  const foundReview = reviews.find(review => review.id === id)
-
-  useEffect(() => {
-    if (!foundReview) {
-      history.push('/404')
-    }
-  }, [foundReview])
+  const params = useParams()
+  const foundReview = reviews.find(review => review.id === parseInt(params.id))
 
   if (foundReview) {
     return (
-      <ReviewCard 
-        key={foundReview.id} 
-        book={foundReview.book} 
-        author={foundReview.author} 
-        text={foundReview.text} 
-        rating={foundReview.rating} 
-      />
+      <Container display="flex">
+        <Col>  
+          <Row>
+            <Card border="header" style={{ width: '25rem' }}>
+              <Card.Img variant="top" src={book_icon} alt="Books." />
+              <Card.Body>
+                  <Card.Title>{foundReview.book} by {foundReview.author}</Card.Title>
+                  <Card.Text>
+                      {foundReview.text}
+                      <br />{foundReview.rating} stars
+                  </Card.Text>
+              </Card.Body>
+            </Card>
+          </Row>
+        </Col>
+      </Container>
     )
   } else {
-    return <p>Oops! Sorry, review not found.</p>
+    return (<Redirect to="/404" />)
   }
 }
 

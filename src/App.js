@@ -1,4 +1,5 @@
 import './App.css'
+import 'bootstrap/dist/css/bootstrap.min.css';
 import React, { useState, useEffect } from 'react'
 import { useHistory, Route, Switch } from 'react-router-dom'
 import ReviewsList from './components/ReviewsList'
@@ -6,10 +7,10 @@ import NewReviewForm from './components/NewReviewForm'
 import Review from './components/Review'
 import Navbar from './components/Navbar'
 import FourOhFour from './components/404'
-import 'bootstrap/dist/css/bootstrap.min.css';
-// import SearchBar from './components/SearchBar'
+import Home from './components/Home'
 
 function App() {
+
   const history = useHistory()
   const [reviews, setReviews] = useState([])
 
@@ -41,15 +42,17 @@ function App() {
 
       <h1>ReadMe</h1>
       <h3>Find something new to read!</h3>
-      <p></p>
-      <h5>Welcome to ReadMe - check out some book reviews, and help others discover new books by writing your own reviews!</h5>
-      <p></p>
+      
       <Navbar />
 
-      {/* <SearchBar /> */}
+      <p></p>
 
       <Switch>
-        
+
+        <Route exact path="/">
+          <Home />
+        </Route>
+
         <Route exact path="/reviews">
           <ReviewsList reviews={reviews} />
         </Route>
@@ -58,11 +61,11 @@ function App() {
           <NewReviewForm reviews={reviews} addReview={addReview} />
         </Route>
         
-        <Route exact path="/reviews/:id">
+        <Route path="/reviews/:id">
           <Review reviews={reviews} />
         </Route>
 
-        <Route path="/404">
+        <Route exact path="/404">
           <FourOhFour />
         </Route>
 

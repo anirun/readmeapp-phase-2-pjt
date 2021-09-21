@@ -8,10 +8,7 @@ function ReviewsList( { reviews } ) {
     const ReviewCards = reviews.map((review) => 
         <Col key={review.id}>
             <ReviewCard
-                book={review.book} 
-                author={review.author} 
-                text={review.text} 
-                rating={review.rating}
+                review={review}
                 />
         </Col>
     )
