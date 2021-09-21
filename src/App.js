@@ -1,7 +1,7 @@
 import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import React, { useState, useEffect } from 'react'
-import { useHistory, Route, Switch } from 'react-router-dom'
+import { Route, Switch } from 'react-router-dom'
 import ReviewsList from './components/ReviewsList'
 import NewReviewForm from './components/NewReviewForm'
 import Review from './components/Review'
@@ -11,7 +11,6 @@ import Home from './components/Home'
 
 function App() {
 
-  const history = useHistory()
   const [reviews, setReviews] = useState([])
 
   useEffect(() => {
